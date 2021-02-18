@@ -1,0 +1,255 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
+        "projectName": "FoodDeliveryApp.API",
+        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
+        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
+        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
+                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj"
+              },
+              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[20.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
+        "projectName": "FoodDeliveryApp.BL",
+        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
+        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
+        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
+        "projectName": "FoodDeliveryApp.DALS",
+        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
+        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
+        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
