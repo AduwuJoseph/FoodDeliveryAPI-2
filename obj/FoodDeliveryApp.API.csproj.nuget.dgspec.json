@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {}
+    "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {}
   },
   "projects": {
-    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {
+    "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
+        "projectUniqueName": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
         "projectName": "FoodDeliveryApp.API",
-        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
-        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
-        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\obj\\",
+        "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\FoodDeliveryApp.API.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,11 +31,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
-                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj"
+              "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
+                "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj"
               },
-              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
-                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
+              "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+                "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
               }
             }
           }
@@ -83,25 +82,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
+    "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
+        "projectUniqueName": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
         "projectName": "FoodDeliveryApp.BL",
-        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
-        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
-        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\obj\\",
+        "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\FoodDeliveryApp.BL.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -115,8 +113,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
-                "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
+              "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+                "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj"
               }
             }
           }
@@ -166,25 +164,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
+    "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
+        "projectUniqueName": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
         "projectName": "FoodDeliveryApp.DALS",
-        "projectPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
-        "packagesPath": "C:\\Users\\First Digit\\.nuget\\packages\\",
-        "outputPath": "C:\\Joseph\\TEF IDea\\PROJECTS\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\obj\\",
+        "projectPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\FoodDeliveryApp.DALS.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\2021\\FoodAppByteworksAPI\\FoodDeliveryApp.DALS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\First Digit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -247,7 +244,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

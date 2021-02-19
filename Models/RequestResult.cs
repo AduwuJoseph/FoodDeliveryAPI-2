@@ -9,5 +9,7 @@ namespace FoodDeliveryApp.API.Models
     {
         public bool Status { get; set; }
         public string Message { get; set; }
+
+        public virtual OrderVM Order { get; set; }
     }
 }

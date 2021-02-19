@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using FoodDeliveryApp.API.Models;
 using FoodDeliveryApp.BL.BusinessLogic.Interfaces;
+using FoodDeliveryApp.BL.DVM;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -381,6 +382,159 @@ namespace FoodDeliveryApp.API.Controllers
                 }
             }
             return result;
+        }
+
+        // POST api/Transactions/AddOrder
+        [HttpPost]
+        [Route("AddOrder")]
+        public async Task<RequestResult> AddOrder(OrderVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new RequestResult { Order = model, Message = "All fields are required", Status = false };
+            }
+            OrderVM vm = new OrderVM();
+
+            if (model.OrderId == 0)
+            {
+                var cust = await customersBL.GetCustomerByID(model.CustomerId);
+                var order = new OrderDVM
+                {
+                    CustomerId = model.CustomerId,
+                    DateCreated = DateTime.Now,
+                    CityCode = cust.CityCode,
+                    Discount = model.Discount,
+                    IsCheckout = false,
+                    OrderStatus = "New",
+                    ShippingAddress = model.ShippingAddress,
+                    TotalAmount = 0,
+
+                };
+                var oid = await transactionsBL.AddOrder(order);
+                decimal total = 0;
+                decimal discount = 0;
+                if (oid > 0)
+                {
+                    string result = string.Empty;
+                    foreach (var item in model.CartItems)
+                    {
+                        var meal = await setupBL.GetMealByID(item.MealId);
+                        var detailsDVM = new OrderDetailDVM
+                        {
+                            OrderId = oid,
+                            MealId = Convert.ToInt32(item.MealId),
+                            Discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0,
+                            Price = meal.Price,
+                            Quantity = Convert.ToInt16(item.Quantity),
+                        };
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+                        result = await transactionsBL.AddOrderDetail(detailsDVM);
+                    }
+                    order = await transactionsBL.GetOrderByID(oid);
+                    order.TotalAmount = total;
+                    await transactionsBL.UpdateOrder(order);
+                    vm = new OrderVM
+                    {
+                        CustomerId = order.CustomerId,
+                        CityCode = order.CityCode,
+                        Discount = order.Discount,
+                        IsCheckout = false,
+                        OrderStatus = "New",
+                        ShippingAddress = order.ShippingAddress,
+                        TotalAmount = total,
+                    };
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        return new RequestResult { Order = vm, Message = "Order successfully created.", Status = true };
+                    }
+                }
+                return new RequestResult { Order = model, Message = "Order failed to create. Please try again.", Status = false };
+            }
+            else
+            {
+                var order = await transactionsBL.GetOrderByID(model.OrderId);
+
+                string result = string.Empty;
+                decimal total = 0;
+                decimal discount = 0;
+                foreach (var item in model.CartItems)
+                {
+                    var meal = await setupBL.GetMealByID(item.MealId);
+                    object[] id = { model.OrderId, item.MealId };
+                    var detchk = await transactionsBL.GetOrderDetailByID(id);
+                    if (detchk == null)
+                    {
+                        var detailsDVM = new OrderDetailDVM
+                        {
+                            OrderId = model.OrderId,
+                            MealId = Convert.ToInt32(item.MealId),
+                            Discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0,
+                            Price = meal.Price,
+                            Quantity = Convert.ToInt16(item.Quantity),
+                        };
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+
+                        result = await transactionsBL.AddOrderDetail(detailsDVM);
+                    }
+                    else
+                    {
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+
+                        detchk.Quantity = Convert.ToInt16(item.Quantity);
+                        bool result2 = await transactionsBL.UpdateOrderDetail(detchk);
+                    }
+                }
+                order.TotalAmount = total;
+                await transactionsBL.UpdateOrder(order);
+                vm = new OrderVM
+                {
+                    CustomerId = order.CustomerId,
+                    CityCode = order.CityCode,
+                    Discount = order.Discount,
+                    IsCheckout = false,
+                    OrderStatus = "New",
+                    ShippingAddress = order.ShippingAddress,
+                    TotalAmount = total,
+                };
+                if (!string.IsNullOrEmpty(result))
+                {
+                    return new RequestResult { Order = vm, Message = "Order successfully created.", Status = true };
+                }
+            }
+            return new RequestResult { Order = model, Message = "An error occured, process not completed.", Status = true };
+        }
+
+
+        // POST api/Transactions/AddOrder
+        [HttpPost]
+        [Route("AddPayment")]
+        public async Task<RequestResult> AddPayment(PaymentVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new RequestResult { Message = "All fields are required", Status = false };
+            }
+            if (model.TransactionRef != null && model.OrderId > 0)
+            {
+                var pay = new PaymentDVM
+                {
+                    TransactionRef = model.TransactionRef,
+                    TransactionDate = model.TransactionDate,
+                    OrderId = model.OrderId,
+                    Amount = model.Amount,
+                };
+                var payid = await transactionsBL.AddPayment(pay);
+                
+                if (!string.IsNullOrEmpty(payid))
+                {
+                    return new RequestResult { Message = "Payment was successfully done.", Status = true };
+                }
+            }
+            return new RequestResult { Message = "An error occured, payment could not be completed.", Status = true };
         }
 
     }

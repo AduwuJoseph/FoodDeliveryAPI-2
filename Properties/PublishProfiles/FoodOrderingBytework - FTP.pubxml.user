@@ -23,16 +23,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2019 13:19:42</publishTime>
     </File>
     <File Include="FoodDeliveryApp.API.deps.json">
-      <publishTime>02/18/2021 16:33:20</publishTime>
+      <publishTime>02/18/2021 18:36:19</publishTime>
     </File>
     <File Include="FoodDeliveryApp.API.dll">
-      <publishTime>02/18/2021 16:33:09</publishTime>
+      <publishTime>02/18/2021 18:36:16</publishTime>
     </File>
     <File Include="FoodDeliveryApp.API.exe">
-      <publishTime>02/18/2021 16:33:11</publishTime>
+      <publishTime>02/18/2021 18:36:17</publishTime>
     </File>
     <File Include="FoodDeliveryApp.API.pdb">
-      <publishTime>02/18/2021 16:33:09</publishTime>
+      <publishTime>02/18/2021 18:36:16</publishTime>
     </File>
     <File Include="FoodDeliveryApp.API.runtimeconfig.json">
       <publishTime>02/18/2021 15:42:21</publishTime>
@@ -191,7 +191,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2018 13:29:44</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>02/18/2021 16:33:20</publishTime>
+      <publishTime>02/18/2021 18:36:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

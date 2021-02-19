@@ -148,8 +148,10 @@ namespace FoodDeliveryApp.API.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return new RequestResult { Message = "All fields are required", Status = false };
+                return new RequestResult { Order = model, Message = "All fields are required", Status = false };
             }
+            OrderVM vm = new OrderVM();
+            
             if (model.OrderId == 0)
             {
                 var cust = await customersBL.GetCustomerByID(model.CustomerId);
@@ -162,32 +164,105 @@ namespace FoodDeliveryApp.API.Controllers
                     IsCheckout = false,
                     OrderStatus = "New",
                     ShippingAddress = model.ShippingAddress,
-                    TotalAmount = model.TotalAmount,
+                    TotalAmount = 0,
 
                 };
-                //var cid = await customersBL.AddCustomer(cus);
-                //var user = usersBL.GetUserByEmail(model.Email);
-                //if (!string.IsNullOrEmpty(cid) && user == null)
-                //{
-                //    AspNetUserDVM usern = new AspNetUserDVM
-                //    {
-                //        Email = model.Email.ToLower(),
-                //        UserName = model.Email.ToLower(),
-                //        Password = model.Password
-                //    };
-
-                //    bool result = await usersBL.AddUser(usern, "Customer");
-                //    if (result)
-                //    {
-                //        return new RequestResult { Message = "Account created successfully.", Status = true };
-                //    }
-                //}
-                return new RequestResult { Message = "Unable to create account. Please try again.", Status = false };
+                var oid = await transactionsBL.AddOrder(order);
+                decimal total = 0;
+                decimal discount = 0;
+                if (oid > 0)
+                {
+                    string result = string.Empty;
+                    foreach (var item in model.CartItems)
+                    {
+                        var meal = await setupBL.GetMealByID(item.MealId);
+                        var detailsDVM = new OrderDetailDVM
+                        {
+                            OrderId = oid,
+                            MealId = Convert.ToInt32(item.MealId),
+                            Discount = item.Discount != null? Convert.ToDecimal(item.Discount): 0,
+                            Price = meal.Price,
+                            Quantity = Convert.ToInt16(item.Quantity),
+                        };
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+                       
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+                        result = await transactionsBL.AddOrderDetail(detailsDVM);
+                    }
+                    order = await transactionsBL.GetOrderByID(oid);
+                    order.TotalAmount = total;
+                    await transactionsBL.UpdateOrder(order);
+                    vm = new OrderVM
+                    {
+                        CustomerId = order.CustomerId,
+                        CityCode = order.CityCode,
+                        Discount = order.Discount,
+                        IsCheckout = false,
+                        OrderStatus = "New",
+                        ShippingAddress = order.ShippingAddress,
+                        TotalAmount = total,
+                    };
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        return new RequestResult { Order = vm, Message = "Order successfully created.", Status = true };
+                    }
+                }
+                return new RequestResult { Order = model, Message = "Order failed to create. Please try again.", Status = false };
             }
             else
             {
-                return new RequestResult { Message = "Email address already taken. Please try again with another email.", Status = false };
+                var order = await transactionsBL.GetOrderByID(model.OrderId);
+
+                string result = string.Empty;
+                decimal total = 0;
+                decimal discount = 0;
+                foreach (var item in model.CartItems)
+                {
+                    var meal = await setupBL.GetMealByID(item.MealId);
+                    object[] id = { model.OrderId, item.MealId };
+                    var detchk = await transactionsBL.GetOrderDetailByID(id);
+                    if (detchk == null)
+                    {
+                        var detailsDVM = new OrderDetailDVM
+                        {
+                            OrderId = model.OrderId,
+                            MealId = Convert.ToInt32(item.MealId),
+                            Discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0,
+                            Price = meal.Price,
+                            Quantity = Convert.ToInt16(item.Quantity),
+                        };
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+
+                        result = await transactionsBL.AddOrderDetail(detailsDVM);
+                    }
+                    else
+                    {
+                        discount = item.Discount != null ? Convert.ToDecimal(item.Discount) : 0;
+                        total += Convert.ToDecimal(item.Quantity * meal.Price) - discount;
+
+                        detchk.Quantity = Convert.ToInt16(item.Quantity);
+                        bool result2 = await transactionsBL.UpdateOrderDetail(detchk);
+                    }
+                }
+                order.TotalAmount = total;
+                await transactionsBL.UpdateOrder(order);
+                vm = new OrderVM
+                {
+                    CustomerId = order.CustomerId,
+                    CityCode = order.CityCode,
+                    Discount = order.Discount,
+                    IsCheckout = false,
+                    OrderStatus = "New",
+                    ShippingAddress = order.ShippingAddress,
+                    TotalAmount = total,
+                };
+                if (!string.IsNullOrEmpty(result))
+                {
+                    return new RequestResult { Order = vm, Message = "Order successfully created.", Status = true };
+                }
             }
+            return new RequestResult { Order = model, Message = "An error occured, process not completed.", Status = true };
         }
 
     }
